@@ -1,46 +1,63 @@
-/* app/globals.css */
+/* globals.css - منصة أساس | تدعم Dark Mode */
 
-/* إعادة تهيئة بسيطة */
-* {
+:root {
+  --color-bg-light: #f5f5f5;
+  --color-bg-dark: #1a1a1a;
+  --color-main-light: #fff;
+  --color-main-dark: #222;
+  --color-text-light: #333;
+  --color-text-dark: #f5f5f5;
+  --color-primary: #2980b9;
+  --color-primary-hover: #3498db;
+}
+
+/* الهيكل العام */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-html, body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
+body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
 }
 
-body {
-  min-height: 100vh;
-}
-
-/* الحاوية الرئيسية */
+/* Main container */
 main {
   max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #fff;
+  background-color: var(--color-main-light);
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+body.dark main {
+  background-color: var(--color-main-dark);
 }
 
 /* العناوين */
-h1 {
-  color: #2c3e50;
+h1, h2 {
+  margin: 1rem 0;
   text-align: center;
-  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 h2 {
-  color: #34495e;
-  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-/* الوسوم */
+/* Labels & inputs */
 label {
   display: block;
   margin: 1rem 0 0.5rem 0;
@@ -55,32 +72,39 @@ select {
   border-radius: 5px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
 }
 
-/* الأزرار */
+body.dark input,
+body.dark select {
+  background-color: #333;
+  color: #f5f5f5;
+  border-color: #555;
+}
+
+/* Buttons */
 button {
-  background-color: #2980b9;
-  color: white;
+  background-color: var(--color-primary);
+  color: #fff;
   padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #3498db;
+  background-color: var(--color-primary-hover);
 }
 
-/* أقسام */
+/* Sections & paragraphs */
 section {
   text-align: center;
   margin-top: 2rem;
 }
 
-/* نصوص إضافية */
 p {
   margin-top: 1rem;
-  font-weight: 500;
+  font-weight: bold;
 }
