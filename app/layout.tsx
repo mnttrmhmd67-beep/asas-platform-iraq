@@ -1,8 +1,10 @@
+// app/layout.tsx
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 
+// إعداد الخطوط
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,9 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// بيانات الميتا
 export const metadata: Metadata = {
-  title: "منصة أساس",
-  description: "بيع حديد التسليح ومواد البناء في العراق",
+  title: "منصة الأساس",
+  description: "منصة إلكترونية لبيع حديد التسليح ومواد البناء في العراق",
 };
 
 export default function RootLayout({
@@ -23,28 +26,22 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body
-        className={`min-h-screen flex flex-col ${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 dark:bg-black text-gray-900 dark:text-gray-100`}
-      >
-        {/* الهيدر */}
-        <header className="w-full bg-white dark:bg-gray-900 shadow-md p-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">منصة أساس</h1>
-          <nav className="flex gap-4">
-            <Link href="/" className="hover:text-blue-600">الرئيسية</Link>
-            <Link href="/customer" className="hover:text-blue-600">العملاء</Link>
-            <Link href="/supplier" className="hover:text-blue-600">الموردون</Link>
-          </nav>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Navbar ثابت */}
+        <header className="bg-white shadow p-4 flex justify-center gap-6 sticky top-0 z-50">
+          <Link href="/" className="hover:text-blue-600 font-semibold">
+            الرئيسية
+          </Link>
+          <Link href="/customer" className="hover:text-blue-600 font-semibold">
+            العملاء
+          </Link>
+          <Link href="/supplier" className="hover:text-blue-600 font-semibold">
+            الموردون
+          </Link>
         </header>
 
         {/* المحتوى الرئيسي */}
-        <main className="flex-1 w-full max-w-5xl mx-auto p-6">
-          {children}
-        </main>
-
-        {/* الفوتر */}
-        <footer className="w-full bg-white dark:bg-gray-900 shadow-inner p-4 text-center text-sm">
-          © 2026 منصة أساس - جميع الحقوق محفوظة
-        </footer>
+        <main className="max-w-5xl mx-auto p-6">{children}</main>
       </body>
     </html>
   );
