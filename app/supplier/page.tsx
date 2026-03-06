@@ -3,28 +3,17 @@
 import { useState } from "react";
 
 export default function SupplierPage() {
-
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [product, setProduct] = useState("حديد 12 مم");
   const [quantity, setQuantity] = useState(1);
 
-  const products = [
-    "حديد 12 مم",
-    "حديد 16 مم",
-    "حديد 20 مم",
-    "حديد 25 مم",
-    "حديد 32 مم",
-  ];
-
+  const products = ["حديد 12 مم", "حديد 16 مم", "حديد 20 مم", "حديد 25 مم", "حديد 32 مم"];
   const pricePerTon = 1000000;
   const total = quantity * pricePerTon;
 
   const handleSubmit = () => {
-
-    const message =
-      `عرض من المورد ${name}، هاتف: ${phone}، المنتج: ${product}، الكمية: ${quantity} طن، السعر الكلي: ${total} دينار`;
-
+    const message = `طلب جديد من المورد ${name}، هاتف: ${phone}، المنتج: ${product}، الكمية: ${quantity} طن، السعر الكلي: ${total} د.ع`;
     window.open(
       `https://wa.me/9647732670436?text=${encodeURIComponent(message)}`,
       "_blank"
@@ -35,7 +24,7 @@ export default function SupplierPage() {
     <main className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md mt-10 text-right">
 
       <h1 className="text-2xl font-bold mb-6 text-center">
-        نموذج عرض المورد
+        نموذج طلب المورد
       </h1>
 
       <input
@@ -58,7 +47,7 @@ export default function SupplierPage() {
         className="w-full p-2 border rounded mb-4"
       >
         {products.map((p) => (
-          <option key={p}>{p}</option>
+          <option key={p} value={p}>{p}</option>
         ))}
       </select>
 
@@ -78,7 +67,7 @@ export default function SupplierPage() {
         onClick={handleSubmit}
         className="w-full bg-green-600 text-white p-3 rounded"
       >
-        إرسال العرض عبر واتساب
+        إرسال الطلب عبر واتساب
       </button>
 
     </main>
