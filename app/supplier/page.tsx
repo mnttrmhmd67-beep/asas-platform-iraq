@@ -17,26 +17,26 @@ export default function SupplierPage() {
   };
 
   return (
-    <main className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md mt-10 text-right">
+    <main className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md mt-10">
       <h1 className="text-2xl font-bold mb-6 text-center">نموذج طلب المورد</h1>
 
       <input
         placeholder="اسم المورد"
         value={name}
-        onChange={e => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         className="w-full p-2 border rounded mb-4"
       />
 
       <input
         placeholder="رقم الهاتف"
         value={phone}
-        onChange={e => setPhone(e.target.value)}
+        onChange={(e) => setPhone(e.target.value)}
         className="w-full p-2 border rounded mb-4"
       />
 
       <select
         value={product}
-        onChange={e => setProduct(e.target.value)}
+        onChange={(e) => setProduct(e.target.value)}
         className="w-full p-2 border rounded mb-4"
       >
         {products.map(p => (
@@ -48,7 +48,7 @@ export default function SupplierPage() {
         type="number"
         min={1}
         value={quantity}
-        onChange={e => setQuantity(Number(e.target.value))}
+        onChange={(e) => setQuantity(Number(e.target.value))}
         className="w-full p-2 border rounded mb-4"
       />
 
@@ -56,7 +56,7 @@ export default function SupplierPage() {
 
       <button
         onClick={handleSubmit}
-        className="w-full bg-green-600 text-white p-3 rounded"
+        className="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700 transition"
       >
         إرسال الطلب عبر واتساب
       </button>
