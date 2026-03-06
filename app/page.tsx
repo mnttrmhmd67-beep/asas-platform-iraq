@@ -6,7 +6,7 @@ export default function HomePage() {
 
   return (
     <main className="flex min-h-screen items-center justify-center p-6">
-      <div className="text-center mb-10">
+      <div classsName="text-center mb-10">
         <h1 className="text-4xl font-bold mb-6">منصة أساس لبيع حديد التسليح</h1>
       </div>
       <div className="w-full max-w-3xl flex justify-between gap-4">
