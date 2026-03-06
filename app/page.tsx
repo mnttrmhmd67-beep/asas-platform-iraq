@@ -6,35 +6,37 @@ export default function HomePage() {
   const router = useRouter();
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
 
-      <h1 className="text-4xl font-bold mb-16 text-center">
-        منصة أساس لبيع حديد التسليح
+      {/* اسم المنصة */}
+      <h1 className="text-4xl font-bold mb-4 text-gray-800 text-center">
+        منصة أساس
       </h1>
 
-      <div className="flex gap-10 w-full max-w-4xl">
+      <p className="mb-16 text-gray-600 text-lg text-center">
+        منصة أساس لبيع حديد التسليح
+      </p>
 
-        {/* المورد يسار */}
+      {/* الازرار */}
+      <div className="flex w-full max-w-4xl gap-10">
+
+        {/* المورد - يسار */}
         <div
           onClick={() => router.push("/supplier")}
-          className="flex-1 bg-green-600 text-white text-2xl font-bold p-16 rounded-xl cursor-pointer hover:bg-green-700 text-center"
+          className="flex-1 bg-green-600 hover:bg-green-700 text-white text-2xl font-bold p-16 rounded-xl shadow-lg cursor-pointer text-center transition"
         >
           أنا مورد
         </div>
 
-        {/* العميل يمين */}
+        {/* العميل - يمين */}
         <div
           onClick={() => router.push("/customer")}
-          className="flex-1 bg-blue-600 text-white text-2xl font-bold p-16 rounded-xl cursor-pointer hover:bg-blue-700 text-center"
+          className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-2xl font-bold p-16 rounded-xl shadow-lg cursor-pointer text-center transition"
         >
           أنا عميل
         </div>
 
       </div>
-
-      <p className="mt-16 text-gray-600 text-center">
-        منصة أساس تربط بين الموردين والعملاء لشراء حديد التسليح بسهولة داخل العراق
-      </p>
 
     </main>
   );
