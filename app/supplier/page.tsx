@@ -19,14 +19,47 @@ export default function SupplierPage() {
   return (
     <main className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md mt-10 text-right">
       <h1 className="text-2xl font-bold mb-6 text-center">نموذج طلب المورد</h1>
-      <input placeholder="اسم المورد" value={name} onChange={e=>setName(e.target.value)} className="w-full p-2 border rounded mb-4"/>
-      <input placeholder="رقم الهاتف" value={phone} onChange={e=>setPhone(e.target.value)} className="w-full p-2 border rounded mb-4"/>
-      <select value={product} onChange={e=>setProduct(e.target.value)} className="w-full p-2 border rounded mb-4">
-        {products.map(p=> <option key={p} value={p}>{p}</option>)}
+
+      <input
+        placeholder="اسم المورد"
+        value={name}
+        onChange={e => setName(e.target.value)}
+        className="w-full p-2 border rounded mb-4"
+      />
+
+      <input
+        placeholder="رقم الهاتف"
+        value={phone}
+        onChange={e => setPhone(e.target.value)}
+        className="w-full p-2 border rounded mb-4"
+      />
+
+      <select
+        value={product}
+        onChange={e => setProduct(e.target.value)}
+        className="w-full p-2 border rounded mb-4"
+      >
+        {products.map(p => (
+          <option key={p} value={p}>{p}</option>
+        ))}
       </select>
-      <input type="number" min={1} value={quantity} onChange={e=>setQuantity(Number(e.target.value))} className="w-full p-2 border rounded mb-4"/>
+
+      <input
+        type="number"
+        min={1}
+        value={quantity}
+        onChange={e => setQuantity(Number(e.target.value))}
+        className="w-full p-2 border rounded mb-4"
+      />
+
       <p className="font-bold mb-4">السعر الكلي: {total.toLocaleString()} دينار</p>
-      <button onClick={handleSubmit} className="w-full bg-green-600 text-white p-3 rounded">إرسال الطلب عبر واتساب</button>
+
+      <button
+        onClick={handleSubmit}
+        className="w-full bg-green-600 text-white p-3 rounded"
+      >
+        إرسال الطلب عبر واتساب
+      </button>
     </main>
   );
 }
