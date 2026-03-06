@@ -6,34 +6,34 @@ export default function HomePage() {
   const router = useRouter();
 
   return (
-    <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-6">
 
-      {/* اسم المنصة */}
-      <h1 className="text-4xl font-bold mb-4 text-gray-800 text-center">
+      {/* عنوان المنصة */}
+      <h1 className="text-4xl font-bold mb-4 text-gray-800">
         منصة أساس
       </h1>
 
-      <p className="mb-16 text-gray-600 text-lg text-center">
+      <p className="text-lg text-gray-600 mb-12">
         منصة أساس لبيع حديد التسليح
       </p>
 
-      {/* الازرار */}
-      <div className="flex w-full max-w-4xl gap-10">
+      {/* الأزرار */}
+      <div className="flex gap-10 w-full max-w-3xl">
 
-        {/* المورد - يسار */}
-        <div
-          onClick={() => router.push("/supplier")}
-          className="flex-1 bg-green-600 hover:bg-green-700 text-white text-2xl font-bold p-16 rounded-xl shadow-lg cursor-pointer text-center transition"
-        >
-          أنا مورد
-        </div>
-
-        {/* العميل - يمين */}
+        {/* زر العميل */}
         <div
           onClick={() => router.push("/customer")}
-          className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-2xl font-bold p-16 rounded-xl shadow-lg cursor-pointer text-center transition"
+          className="flex-1 cursor-pointer bg-blue-600 text-white text-2xl font-bold p-10 rounded-xl shadow-lg hover:bg-blue-700 transition text-center"
         >
           أنا عميل
+        </div>
+
+        {/* زر المورد */}
+        <div
+          onClick={() => router.push("/supplier")}
+          className="flex-1 cursor-pointer bg-green-600 text-white text-2xl font-bold p-10 rounded-xl shadow-lg hover:bg-green-700 transition text-center"
+        >
+          أنا مورد
         </div>
 
       </div>
