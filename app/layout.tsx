@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "منصة بنيان",
+  title: "منصة أساس لبيع حديد التسليح",
   description: "منصة بيع وتوريد حديد التسليح",
 };
 
