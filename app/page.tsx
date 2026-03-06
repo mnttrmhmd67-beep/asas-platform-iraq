@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export default function HomePage() {
   const router = useRouter();
@@ -10,34 +9,20 @@ export default function HomePage() {
     <main className="flex min-h-screen bg-gray-100 items-center justify-center p-6">
       <div className="grid grid-cols-2 gap-16 max-w-4xl w-full">
         {/* زر العميل */}
-        <div
+        <button
           onClick={() => router.push("/customer/page")}
-          className="cursor-pointer bg-blue-600 text-white font-bold text-xl p-12 rounded-2xl shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105 flex flex-col items-center justify-center"
+          className="bg-blue-600 text-white font-bold text-xl p-12 rounded-2xl shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
         >
-          <Image
-            src="/customer-icon.svg"
-            alt="عميل"
-            width={100}
-            height={100}
-            className="mb-4"
-          />
-          <span>أنا عميل</span>
-        </div>
+          أنا عميل
+        </button>
 
         {/* زر المورد */}
-        <div
+        <button
           onClick={() => router.push("/supplier/page")}
-          className="cursor-pointer bg-green-600 text-white font-bold text-xl p-12 rounded-2xl shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105 flex flex-col items-center justify-center"
+          className="bg-green-600 text-white font-bold text-xl p-12 rounded-2xl shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
         >
-          <Image
-            src="/supplier-icon.svg"
-            alt="مورد"
-            width={100}
-            height={100}
-            className="mb-4"
-          />
-          <span>أنا مورد</span>
-        </div>
+          أنا مورد
+        </button>
       </div>
     </main>
   );
