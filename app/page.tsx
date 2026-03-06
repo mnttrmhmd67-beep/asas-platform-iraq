@@ -1,28 +1,22 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-
 export default function HomePage() {
-  const router = useRouter();
-
   return (
-    <main className="flex min-h-screen bg-gray-100 items-center justify-center p-6">
-      <div className="grid grid-cols-2 gap-16 max-w-4xl w-full">
-        {/* زر العميل */}
-        <button
-          onClick={() => router.push("/customer/page")}
-          className="bg-blue-600 text-white font-bold text-xl p-12 rounded-2xl shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
+    <main className="min-h-screen flex flex-col items-center justify-center gap-6">
+      <h1 className="text-4xl font-bold">منصة ASAS</h1>
+      
+      <div className="flex gap-4">
+        <a
+          href="/customer"
+          className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
         >
           أنا عميل
-        </button>
-
-        {/* زر المورد */}
-        <button
-          onClick={() => router.push("/supplier/page")}
-          className="bg-green-600 text-white font-bold text-xl p-12 rounded-2xl shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
+        </a>
+        
+        <a
+          href="/supplier"
+          className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition"
         >
           أنا مورد
-        </button>
+        </a>
       </div>
     </main>
   );
