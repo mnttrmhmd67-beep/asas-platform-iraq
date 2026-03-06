@@ -1,14 +1,14 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "منصة أساس لبيع حديد التسليح",
-  description: "منصة بيع وتوريد حديد التسليح",
+  title: "منصة أساس",
+  description: "منصة أساس لبيع حديد التسليح في العراق",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="ar">
-      <body className="bg-gray-100 font-sans">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
