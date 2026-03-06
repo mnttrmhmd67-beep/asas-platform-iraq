@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 
 export default function CustomerPage() {
@@ -13,7 +12,6 @@ export default function CustomerPage() {
 
   const handleSubmit = () => {
     const message = `طلب جديد من ${name}، هاتف: ${phone}، القطر: ${diameter} مم، الكمية: ${quantity} طن، السعر الكلي: ${total} د.ع`;
-
     window.open(
       `https://wa.me/9647732670436?text=${encodeURIComponent(message)}`,
       "_blank"
@@ -59,9 +57,7 @@ export default function CustomerPage() {
         className="w-full p-2 border rounded mb-4"
       />
 
-      <p className="font-bold mb-4">
-        السعر الكلي: {total.toLocaleString()} دينار
-      </p>
+      <p className="font-bold mb-4">السعر الكلي: {total.toLocaleString()} دينار</p>
 
       <button
         onClick={handleSubmit}
