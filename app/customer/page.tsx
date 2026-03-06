@@ -11,34 +11,34 @@ export default function CustomerPage() {
   const total = quantity * pricePerTon;
 
   const handleSubmit = () => {
-    const message = `طلب جديد من ${name}، هاتف: ${phone}، القطر: ${diameter} مم، الكمية: ${quantity} طن، السعر الكلي: ${total} د.ع`;
+    const message = `طلب جديد من العميل ${name}، هاتف: ${phone}، القطر: ${diameter} مم، الكمية: ${quantity} طن، السعر الكلي: ${total} د.ع`;
     window.open(`https://wa.me/9647732670436?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
-    <main className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md mt-10 text-right">
+    <main className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-md mt-10">
       <h1 className="text-2xl font-bold mb-6 text-center">طلب شراء حديد التسليح</h1>
 
       <input
         placeholder="اسم العميل"
         value={name}
-        onChange={e => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         className="w-full p-2 border rounded mb-4"
       />
 
       <input
         placeholder="رقم الهاتف"
         value={phone}
-        onChange={e => setPhone(e.target.value)}
+        onChange={(e) => setPhone(e.target.value)}
         className="w-full p-2 border rounded mb-4"
       />
 
       <select
         value={diameter}
-        onChange={e => setDiameter(Number(e.target.value))}
+        onChange={(e) => setDiameter(Number(e.target.value))}
         className="w-full p-2 border rounded mb-4"
       >
-        {[12,16,20,25,32].map(d => (
+        {[12, 16, 20, 25, 32].map((d) => (
           <option key={d} value={d}>{d} مم</option>
         ))}
       </select>
@@ -47,7 +47,7 @@ export default function CustomerPage() {
         type="number"
         min={1}
         value={quantity}
-        onChange={e => setQuantity(Number(e.target.value))}
+        onChange={(e) => setQuantity(Number(e.target.value))}
         className="w-full p-2 border rounded mb-4"
       />
 
@@ -55,7 +55,7 @@ export default function CustomerPage() {
 
       <button
         onClick={handleSubmit}
-        className="w-full bg-blue-600 text-white p-3 rounded"
+        className="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition"
       >
         إرسال الطلب عبر واتساب
       </button>
